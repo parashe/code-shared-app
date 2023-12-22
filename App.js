@@ -1,20 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
+import { name as appName } from "./app.json";
+import { SafeAreaView } from "react-native";
+import MovieList from "./web/shared/components/movie";
+import Header from "./web/shared/components/Header";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
 const styles = StyleSheet.create({
-  container: {
+  screenContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 20,
+    color: "black",
+    marginTop: 50,
+    alignSelf: "center",
+  },
+
+  container: {
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
+
+const App = () => {
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.screenContainer}>
+          <Header/>
+
+          <View style={styles.container}>
+            {/* <CustomHomeImage  iscallingfromMob={true}/> */}
+            <Text
+              style={{
+                color: "#f43f5e",
+                textAlign: "center",
+                padding: 10,
+                fontSize: 18,
+                fontWeight: "bold",
+              }}
+            >
+              List of Movies
+            </Text>
+           <MovieList/>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default App;
