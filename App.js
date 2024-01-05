@@ -1,22 +1,16 @@
+// Import necessary components from the 'react', 'react-native', and './web/shared/components/movie' libraries
 import React from "react";
-import { View, StyleSheet, Text, ScrollView } from "react-native";
-import { name as appName } from "./app.json";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native";
 import MovieList from "./web/shared/components/movie";
-import Header from "./web/shared/components/Header";
 
-
+// Define styles using the 'StyleSheet.create' method
 const styles = StyleSheet.create({
+  // Style for the overall screen container
   screenContainer: {
     flex: 1,
   },
-  text: {
-    fontSize: 20,
-    color: "black",
-    marginTop: 50,
-    alignSelf: "center",
-  },
-
+  // Style for the main content container
   container: {
     backgroundColor: "#fff",
     alignItems: "center",
@@ -24,27 +18,20 @@ const styles = StyleSheet.create({
   },
 });
 
+// Define the main functional component named 'App'
 const App = () => {
+  // Return JSX code for the 'App' component
   return (
+    // Wrap the content in a 'SafeAreaView' to ensure it doesn't overlap system elements
     <SafeAreaView>
+      {/* Use 'ScrollView' for scrollable content */}
       <ScrollView>
+        {/* Overall screen container */}
         <View style={styles.screenContainer}>
-          <Header/>
-
+          {/* Main content container */}
           <View style={styles.container}>
-            {/* <CustomHomeImage  iscallingfromMob={true}/> */}
-            <Text
-              style={{
-                color: "#f43f5e",
-                textAlign: "center",
-                padding: 10,
-                fontSize: 18,
-                fontWeight: "bold",
-              }}
-            >
-              List of Movies
-            </Text>
-           <MovieList/>
+            {/* Render the 'MovieList' component */}
+            <MovieList  iscallingfromMob={true}/>
           </View>
         </View>
       </ScrollView>
@@ -52,4 +39,5 @@ const App = () => {
   );
 };
 
+// Export the 'App' component as the default export
 export default App;
