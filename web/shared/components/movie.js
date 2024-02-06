@@ -124,7 +124,7 @@ const MovieList = ({ iscallingfromMob }) => {
             flex: 1,
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "white",
+            backgroundColor: "green",
             padding: 10,
             margin: 5,
             borderBottomWidth: 1,
@@ -261,7 +261,79 @@ const MovieList = ({ iscallingfromMob }) => {
             </View>
           </View>
         </View>
-      </View>
+    
+
+      <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "green",
+            padding: 10,
+            margin: 5,
+            borderBottomWidth: 1,
+            borderBottomColor: "#ccc",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ justifyContent: "center" }}>
+            {/* Movie Title */}
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "bold",
+                marginBottom: 5,
+                color: "#f43f5e",
+              }}
+            >
+              The Conjuring
+            </Text>
+
+            {/* Movie Genre */}
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#f43f5e",
+                marginBottom: 3,
+              }}
+            >
+              Horror
+            </Text>
+
+            {/* Release Year */}
+            <Text
+              style={{
+                fontSize: 14,
+                color: "#f43f5e",
+              }}
+            >
+              2023
+            </Text>
+
+            {/* View Details Button */}
+            <View
+              style={{
+                backgroundColor: "#f43f5e",
+                borderColor: "#f43f5e",
+                borderRadius: 5,
+                padding: 3,
+                width: "100%",
+                justifyContent: "center",
+                cursor: "pointer",
+                border: "none",
+                marginTop: 10,
+                color: "#fff",
+              }}
+            >
+              <Button
+                title="View Details"
+                color={Platform.OS === "android" ? "#f43f5e" : "#fff"}
+                onPress={() => console.log("View Details")}
+              />
+            </View>
+          </View>
+        </View>
+        </View>
          {/* Section header for the list of movies */}
          <Text
         style={{

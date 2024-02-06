@@ -357,8 +357,6 @@ const TranspileComponent = () => {
               // Change the JSX element type to "input"
               openingElement.name.name = "input";
 
-              // Remove children from the input element
-              path.node.children = [];
             }
             // Check if the JSX element type is "Button"
             else if (openingElement.name.name === "Button") {
